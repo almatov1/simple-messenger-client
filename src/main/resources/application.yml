@@ -3,6 +3,14 @@ server:
 spring:
   application:
     name: client
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8443/realms/development
+        opaquetoken:
+          client-id: SpringKeycloakSecurity
+          client-secret: AK8swIDKnsIISKHNgOVmRfoQczuY8jsK
 eureka:
   client:
     service-url:

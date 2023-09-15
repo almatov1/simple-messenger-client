@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Data
 @Accessors(chain = true)
-public class MainResponse {
+public class MainResponseDao {
     private Timestamp timestamp;
     private String path;
     private int status;

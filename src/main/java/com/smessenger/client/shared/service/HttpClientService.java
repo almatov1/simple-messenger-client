@@ -1,6 +1,6 @@
 package com.smessenger.client.shared.service;
 
-import com.smessenger.client.login.dao.LoginResponse;
+import com.smessenger.client.login.dao.LoginResponseDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -16,7 +16,7 @@ public class HttpClientService {
 
     private final WebClient.Builder webClientBuilder;
 
-    public Mono<LoginResponse> postRequest(String requestLink, String requestUri, MediaType mediaType, String authToken, Object body) {
+    public Mono<LoginResponseDao> postRequest(String requestLink, String requestUri, MediaType mediaType, String authToken, Object body) {
         WebClient webClient = webClientBuilder.baseUrl(requestLink).build();
 
         HttpHeaders headers = new HttpHeaders();
@@ -33,6 +33,6 @@ public class HttpClientService {
                         httpStatusCode -> !httpStatusCode.is2xxSuccessful(),
                         clientResponse -> Mono.error(new ResponseStatusException(clientResponse.statusCode(), "failed"))
                 )
-                .bodyToMono(LoginResponse.class);
+                .bodyToMono(LoginResponseDao.class);
     }
 }

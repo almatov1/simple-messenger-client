@@ -10,8 +10,10 @@ spring:
           issuer-uri: http://localhost:8443/realms/development
         opaquetoken:
           client-id: SpringKeycloakSecurity
-          client-secret: AK8swIDKnsIISKHNgOVmRfoQczuY8jsK
+          client-secret: CBcGD21ehXdvNaot2ZKEhNGoCKsRFyBw
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://root:password@localhost:8761/eureka

@@ -1,9 +1,9 @@
 #Auth Request
 
-POST http://localhost:51006/api/v1/login
+POST http://localhost:8765/client/api/v1/login
 Content-Type: application/json
 
 {
-  "username": null,
+  "username": "user",
   "password": "password"
 }

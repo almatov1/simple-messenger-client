@@ -4,6 +4,6 @@ POST http://localhost:8765/client/api/v1/login
 Content-Type: application/json
 
 {
-  "username": "user",
-  "password": "password"
+  "username": "john",
+  "password": "123123"
 }
